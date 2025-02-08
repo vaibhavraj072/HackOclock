@@ -1,6 +1,6 @@
 const gridContainer = document.querySelector('.grid-container');
 
-// Predefined set of saturated colors
+// Predefined set of colors
 const colors = ['#FBCC43', '#4285F4', '#0F9D58', '#EA4335'];
 
 // Calculate total grid cells based on viewport size
@@ -25,7 +25,7 @@ for (let i = 0; i < totalCells; i++) {
     cell.style.backgroundColor = randomColor;
   });
 
-  // Optional: Reset color on mouseout
+  // Reset color on mouseout
   cell.addEventListener('mouseout', () => {
     setTimeout(() => {
       cell.style.backgroundColor = '#111';

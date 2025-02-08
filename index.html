@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Grid</title>
+  <title>Hack O'Clock</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Grid Background -->
+  <div class="grid-container"></div>
+
+  <!-- Header Section -->
   <div class="header">
     <div class="logo-section">
-      <img src="./assets/GDGlogo.png" alt="Logo" class="logo">
-      <img src="./assets/IILM.png" alt="Logo" class="logo">
+      <img src="./assets/GDGlogo.png" alt="Google Developer Group" class="glogo">
+      <img src="./assets/IILM.png" alt="IILM University" class="iilmlogo">
     </div>
     <div class="menu-icon">
       <div class="bar"></div>
@@ -18,9 +22,21 @@
       <div class="bar"></div>
     </div>
   </div>
-  <div class="grid-container">
-    <!-- Grid Items -->
+
+  <!-- Hero Section -->
+  <div class="content">
+    <p class="presenting">PRESENTING</p>
+    <h1 class="title">
+      <span class="hack">HACK</span> 
+      <span class="oclock">O'CLOCK</span>
+    </h1>
+
+    <div class="button-container">
+      <button class="btn">Register Now</button>
+      <button class="btn">Join Discord</button>
+    </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
