@@ -1,0 +1,82 @@
+/* Reset and basic styles */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+/* Header styles */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Ensures space between left and right sections */
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 10; /* Ensure it stays above the grid */
+  height: 70px; /* Define a consistent height for the navbar */
+  }
+  
+
+
+/* Logo and brand name section */
+.logo {
+  height: 60px;
+  width: auto; 
+  object-fit: contain;
+  margin-right: 10px;
+}
+  
+.logo {
+  max-height: 100%; /* Prevent the logo from exceeding the navbar height */
+  height: 200px; /* Set a specific height for the logo */
+  object-fit: contain; /* Ensure proper resizing of the image */
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and brand name */
+}
+
+
+/* Menu icon styles */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-icon .bar {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  margin-right: 100px;
+}
+
+/* Grid container styles */
+.grid-container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: repeat(auto-fill, minmax(20px, 1fr)); /* Flexible grid */
+  grid-template-rows: repeat(auto-fill, minmax(20px, 1fr));
+  gap: 1px; /* Spacing for grid lines */
+  background-color: #000;
+}
+
+.grid-item {
+  width: 100%;
+  height: 100%;
+  background-color: #111; /* Default dark gray */
+  border: 1px solid #454545; /* Slightly lighter for grid effect */
+  transition: background-color 0.3s ease;
+}
