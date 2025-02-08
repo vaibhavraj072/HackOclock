@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: #111;
+  background-color: #000000;
   overflow: hidden;
   font-family: 'Poppins', sans-serif;
   color: #fff;
@@ -21,10 +21,22 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, 20px);
   grid-template-rows: repeat(auto-fill, 20px);
-  background-color: #111;
+  background-color: #000000;
   z-index: -1;
 }
 
+.grid-item {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #333; /* Visible grid */
+  transition: background-color 0.3s ease;
+}
+
+/* Ensure grid is behind content */
+.content, .header {
+  position: relative;
+  z-index: 1;
+}
 
 
 /* Header */
@@ -59,7 +71,7 @@ body {
 .iilmlogo {
   height: 40px;
   width: auto;
-  margin-top: -50px;
+  margin-top: -100px;
 }
 /* Menu Icon */
 .menu-icon {
@@ -67,6 +79,7 @@ body {
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
+  margin-top: -50px;
 }
 
 .menu-icon .bar {
@@ -104,18 +117,20 @@ body {
 .hack {
   color: #ff5733;
   text-shadow: -3px -3px 0 #ff5733, 3px -3px 0 #ff5733, -3px 3px 0 #ff5733, 3px 3px 0 #ff5733;
+  font-size: larger;
 }
 
 .oclock {
   color: #fbcc43;
   text-shadow: -3px -3px 0 #fbcc43, 3px -3px 0 #fbcc43, -3px 3px 0 #fbcc43, 3px 3px 0 #fbcc43;
+  font-size: larger;
 }
 
 /* Buttons */
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 500px;
   margin-top: 25px;
 }
 
@@ -126,9 +141,10 @@ body {
   background: black;
   color: white;
   border: 2px solid white;
+  border-radius: 15px; /* Curved edges */
   cursor: pointer;
   font-weight: bold;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s, border-radius 0.2s;
 }
 
 .btn::before {
@@ -139,10 +155,21 @@ body {
   right: -5px;
   bottom: -5px;
   border: 2px solid red;
+  border-radius: 20px; /* Curved edges */
+  transition: top 0.2s, left 0.2s, right 0.2s, bottom 0.2s, border-radius 0.2s;
 }
 
 .btn:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0px 8px 15px rgba(255, 0, 0, 0.4);
+  background: rgba(76, 67, 67, 0.1);
+  box-shadow: 10px 15px 20px rgba(255, 0, 0, 0.4);
+  border-radius: 0; /* Rectangle edges */
+}
+
+.btn:hover::before {
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 0; /* Rectangle edges */
 }

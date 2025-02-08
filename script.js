@@ -1,17 +1,15 @@
 const gridContainer = document.querySelector('.grid-container');
-
-// Predefined set of colors
 const colors = ['#FBCC43', '#4285F4', '#0F9D58', '#EA4335'];
 
-// Calculate total grid cells based on viewport size
-const rows = Math.floor(window.innerHeight / 21); // 20px cell size + 1px gap
-const cols = Math.floor(window.innerWidth / 21);
+// Get number of rows and columns dynamically
+const rows = Math.floor(window.innerHeight / 21);
+const cols = Math.floor(window.innerWidth / 2);
 const totalCells = rows * cols;
 
-// Function to get a random color from the array
-function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length)];
-}
+// Set grid container dimensions
+gridContainer.style.display = 'grid';
+gridContainer.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+gridContainer.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
 
 // Create grid items
 for (let i = 0; i < totalCells; i++) {
@@ -19,16 +17,16 @@ for (let i = 0; i < totalCells; i++) {
   cell.classList.add('grid-item');
   gridContainer.appendChild(cell);
 
-  // Add hover effect
-  cell.addEventListener('mouseover', () => {
-    const randomColor = getRandomColor();
+  // Hover effect: Change color
+  cell.addEventListener('mouseenter', () => {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
     cell.style.backgroundColor = randomColor;
   });
 
-  // Reset color on mouseout
-  cell.addEventListener('mouseout', () => {
+  // Reset color after 500ms
+  cell.addEventListener('mouseleave', () => {
     setTimeout(() => {
-      cell.style.backgroundColor = '#111';
+      cell.style.backgroundColor = '#111'; // Reset to background color
     }, 500);
   });
 }
