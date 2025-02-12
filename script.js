@@ -1,32 +1,33 @@
 const gridContainer = document.querySelector('.grid-container');
-const colors = ['#FBCC43', '#4285F4', '#0F9D58', '#EA4335'];
+    const colors = ['#FBCC43', '#4285F4', '#0F9D58', '#EA4335'];
 
-// Get number of rows and columns dynamically
-const rows = Math.floor(window.innerHeight / 21);
-const cols = Math.floor(window.innerWidth / 2);
-const totalCells = rows * cols;
+    function createGrid() {
+      gridContainer.innerHTML = ''; // Clear previous grid
+      const cellSize = 20; // Adjust size for better visibility
+      const rows = Math.floor(window.innerHeight / cellSize);
+      const cols = Math.floor(window.innerWidth / cellSize);
+      gridContainer.style.gridTemplateRows = `repeat(${rows}, ${cellSize}px)`;
+      gridContainer.style.gridTemplateColumns = `repeat(${cols}, ${cellSize}px)`;
 
-// Set grid container dimensions
-gridContainer.style.display = 'grid';
-gridContainer.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
-gridContainer.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+      for (let i = 0; i < rows * cols; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('grid-item');
+        gridContainer.appendChild(cell);
 
-// Create grid items
-for (let i = 0; i < totalCells; i++) {
-  const cell = document.createElement('div');
-  cell.classList.add('grid-item');
-  gridContainer.appendChild(cell);
+        // Hover effect: Change color
+        cell.addEventListener('mouseenter', () => {
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
+          cell.style.backgroundColor = randomColor;
+        });
 
-  // Hover effect: Change color
-  cell.addEventListener('mouseenter', () => {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    cell.style.backgroundColor = randomColor;
-  });
+        // Reset color after 500ms
+        cell.addEventListener('mouseleave', () => {
+          setTimeout(() => {
+            cell.style.backgroundColor = 'transparent';
+          }, 500);
+        });
+      }
+    }
 
-  // Reset color after 500ms
-  cell.addEventListener('mouseleave', () => {
-    setTimeout(() => {
-      cell.style.backgroundColor = '#111'; // Reset to background color
-    }, 500);
-  });
-}
+    createGrid();
+    window.addEventListener('resize', createGrid);
