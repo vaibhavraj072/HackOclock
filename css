@@ -295,6 +295,17 @@ hr{
 }
 
 
+
+
+
+.section-4 h1{
+  font-size: 5rem;
+  font-family: 'Creepster', cursive;
+  letter-spacing: 0.125rem;
+  /* -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ff5733; */
+}
+
 .card {
   background-color: #000000;
   border: 0.625rem solid red;
