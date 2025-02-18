@@ -1,6 +1,6 @@
 const gridContainer = document.querySelector('.grid-container');
-    // const colors = ['#FBCC43', '#4285F4', '#0F9D58', '#EA4335'];
-    const colors = ['#FFFFFF'];
+    const colors = ['#FBCC43', '#4285F4', '#0F9D58', '#EA4335', '#FFFFFF'];
+    // const colors = ['#FFFFFF'];
 
     function createGrid() {
       gridContainer.innerHTML = ''; // Clear previous grid
