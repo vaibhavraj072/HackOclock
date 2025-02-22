@@ -8,6 +8,8 @@ body {
   position: relative;
 }
 
+
+
 *{
   z-index: 2;
 }
@@ -32,27 +34,29 @@ body {
 }
 
 /* Nav Bar */
-nav{
+nav {
   height: 10vh;
-  background-color:transparent;
+  background-color: transparent;
   display: flex;
   align-items: center;
-  z-index: 2;
   justify-content: space-between;
   z-index: 2;
+  position: sticky;
+  top: 0;
 }
-.logos{
+
+.logos {
   height: 10vh;
   display: flex;
   align-items: center;
   z-index: 2;
 }
 
-.gdg-logo{
+.gdg-logo {
   height: 200%;
 }
 
-.iilm-logo{
+.iilm-logo {
   height: 42%;
   margin-top: -1%;
 }
@@ -85,8 +89,8 @@ nav{
 
 /* presenting  and title*/
 .presenting {
-  font-size: 50px;
-  font-family: 'Creepster', cursive;
+  font-size: 45px;
+  /* font-family: 'Creepster', cursive; */
   letter-spacing: 5px;
   margin: 1%;
   margin-top: 10%;
@@ -109,14 +113,14 @@ nav{
 .hack {
   color: #ffffff;
   text-shadow: -3px -3px 0 #ff5733, 3px -3px 0 #ff5733, -3px 3px 0 #ff5733, 3px 3px 0 #ff5733;
-  font-size: 115px;
+  font-size: 90px;
 
 }
 
 .oclock {
   color: #ffffff;
   text-shadow: -3px -3px 0 #fbcc43, 3px -3px 0 #fbcc43, -3px 3px 0 #fbcc43, 3px 3px 0 #fbcc43;
-  font-size: 115px;
+  font-size: 90px;
 }
 
 .button-container {
@@ -128,7 +132,7 @@ nav{
 
 .btn {
   position: relative;
-  font-size: 20px;
+  font-size: 15px;
   padding: 12px 30px;
   background: black;
   color: white;
@@ -176,7 +180,7 @@ nav{
   flex-direction: column;
   margin-top: 10%;
   height: auto;
-  font-family: 'Creepster', cursive;
+  /* font-family: 'Creepster', cursive; */
   font-size: 1.-0.625rem;
   /* -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ff5733; */
@@ -210,7 +214,7 @@ hr{
 
 .section-3 h1{
   font-size: 5rem;
-  font-family: 'Creepster', cursive;
+  /* font-family: 'Creepster', cursive; */
   letter-spacing: 10px;
   /* -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #ff5733; */
@@ -224,8 +228,8 @@ hr{
 }
 
 p {
-  font-size: 1.3vw;
-  line-height: 1.3;
+  font-size: 1vw;
+  line-height: 1.2;
   max-width: 60%;
 }
 
@@ -251,7 +255,7 @@ p {
 
 .section-4 h1{
   font-size: 5rem;
-  font-family: 'Creepster', cursive;
+  /* font-family: 'Creepster', cursive; */
   letter-spacing: 10px;
   /* -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #ff5733; */
@@ -325,7 +329,7 @@ p {
 
 .section-judges h1 {
   font-size: 5rem;
-  font-family: 'Creepster', cursive;
+  /* font-family: 'Creepster', cursive; */
   letter-spacing: 10px;
   /* -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #ff5733; */
@@ -349,8 +353,8 @@ p {
 }
 
 .judge-card h2 {
-  font-size: 2rem;
-  font-family: 'Creepster', cursive;
+  font-size: 1rem;
+  /* font-family: 'Creepster', cursive; */
 }
 
 .judge-image {
@@ -366,10 +370,10 @@ p {
 }
 
 .judge-role {
-  font-size: .8rem;
+  font-size: .5rem;
   color: #cccccc;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 
@@ -402,7 +406,7 @@ p {
 
 h1 {
   font-size: 4vw;
-  font-family: 'Creepster', cursive;
+  /* font-family: 'Creepster', cursive; */
   letter-spacing: 10px;
 }
 
@@ -426,7 +430,7 @@ h1 {
 }
 
 h2 {
-  font-size: 3vw;
+  font-size: 2vw;
   text-transform: capitalize;
   line-height: 1;
 }
@@ -470,4 +474,75 @@ p {
   width: 100%;
   max-width: 500px;
   border-radius: 1vw;
+}
+
+
+.TIMELINE { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+
+h1 {
+  font-size: 4vw;
+  letter-spacing: 10px;
+}
+
+.time-card {
+  position: relative; /* Allows content to overlap */
+  width: 80%;
+  max-width: 900px;
+}
+
+.time-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.schedule {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  padding: 20px;
+}
+
+.days {
+  border: 2px solid white;
+  padding: 30px;
+  text-align: center;
+  font-size: 2vw;
+  border-radius: 10px;
+  height: auto;
+  width: 10vw;
+  margin-bottom: -4.688vw;
+  margin-left: 20px;
+}
+
+.days p {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.days hr {
+  width: 80%;
+  border: 1px solid white;
+}
+
+.events {
+  font-size: 1.5vw;
+  text-align: left;
+  line-height: 1.8;
+  margin-bottom: -6vw;
+  margin-left: 200px;
+  padding: 20px;
+  border-radius: 10px;
 }
