@@ -145,16 +145,81 @@
                 <p>DAY 2</p>
             </div>
             <div class="events">
-                <p><b>Registration</b> 9:00</p>
-                <p><b>Opening Ceremony</b> 9:45</p>
-                <p><b>Idea Sacking</b> 10:57</p>
-                <p><b>Registration</b> 9:00</p>
+                <ul>
+                  <li>Registration 9:00</li>
+                  <li>Opening Ceremony 9:45</li>
+                  <li>Idea Sacking 10:57</li>
+                  <li>Registration 9:00</li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
-   
+<section class="problem-statement">
+  <h1>Problem Statement</h1>
+  <div class="carousel-container">
+      <div class="arrow left" onclick="moveLeft()">&#10094;</div>
+      <div class="carousel" id="carousel">
+          <script>
+              for (let i = 1; i <= 17; i++) {
+                  document.write(`<div class='tile ${i === 3 ? "active" : "hidden"}'>Problem Statement ${i}</div>`);
+              }
+          </script>
+      </div>
+      <div class="arrow right" onclick="moveRight()">&#10095;</div>
+  </div>
+  <div class="dots" id="dots"></div>
+</section>
+
+<script>
+  let currentIndex = 2;
+  const tiles = document.querySelectorAll(".tile");
+  const dotsContainer = document.getElementById("dots");
+
+  function updateDots() {
+      dotsContainer.innerHTML = "";
+      for (let i = 0; i < tiles.length; i++) {
+          let dot = document.createElement("div");
+          dot.classList.add("dot");
+          if (i === currentIndex) {
+              dot.classList.add("active");
+          }
+          dotsContainer.appendChild(dot);
+      }
+  }
+
+  function updateTiles() {
+      tiles.forEach((tile, index) => {
+          tile.classList.add("hidden");
+          tile.classList.remove("active");
+          tile.style.opacity = "0.5";
+          tile.style.transform = "scale(0.8)";
+      });
+      tiles[currentIndex - 1]?.classList.remove("hidden");
+      tiles[currentIndex].classList.remove("hidden");
+      tiles[currentIndex].classList.add("active");
+      tiles[currentIndex].style.opacity = "1";
+      tiles[currentIndex].style.transform = "scale(1)";
+      tiles[currentIndex + 1]?.classList.remove("hidden");
+      updateDots();
+  }
+
+  function moveLeft() {
+      if (currentIndex > 1) {
+          currentIndex--;
+          updateTiles();
+      }
+  }
+
+  function moveRight() {
+      if (currentIndex < tiles.length - 2) {
+          currentIndex++;
+          updateTiles();
+      }
+  }
+  updateDots();
+</script>
 
 
   <script src="script.js"></script>
