@@ -565,79 +565,88 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: auto;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+  color: white;
 }
 
 h1 {
   font-size: 4vw;
-  /* font-family: 'Creepster', cursive; */
   letter-spacing: 10px;
 }
 
-.problem-statement {
-  width: 60vw;
-  text-align: center;
-  color: white;
-}
 .carousel-container {
   display: flex;
   align-items: center;
   position: relative;
+  width: 80vw;
+  overflow: hidden;
 }
-.arrow {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
 }
-.arrow.left { left: 10px; }
-.arrow.right { right: 10px; }
+
 .carousel {
   display: flex;
   gap: 10px;
-  overflow: hidden;
-  width: 100%;
-  justify-content: center;
-  position: relative;
+  transition: transform 0.5s ease-in-out;
 }
+
 .tile {
+  flex: 0 0 auto;
   width: 200px;
   height: 250px;
-  background: #000000;
+  background: black;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease-in-out;
   border-radius: 10px;
-  opacity: 0.5;
-  transform: scale(0.8);
+  opacity: 0.8;
   font-size: 18px;
   text-align: center;
 }
+
 .tile.active {
-  width: 250px;
-  height: 300px;
+  transform: scale(1.2);
   opacity: 1;
-  transform: scale(1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
-.hidden {
-  display: none;
+
+.tile.faded {
+  opacity: 0.5;
+  transform: scale(0.9);
 }
+
+.arrow {
+  position: absolute;
+  background: rgb(50, 47, 47);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
+
 .dots {
   display: flex;
   gap: 5px;
   margin-top: 15px;
 }
+
 .dot {
   width: 10px;
   height: 10px;
   background: gray;
   border-radius: 50%;
 }
+
 .dot.active {
   background: pink;
 }

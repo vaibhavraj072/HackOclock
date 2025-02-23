@@ -194,43 +194,46 @@
     </div>
   </section>
 
-  <section class="problem-statement" style="max-width: 1200px; margin: 0 auto;">
+  <section class="problem-statement">
     <h1>Problem Statement</h1>
     <div class="carousel-container">
       <div class="arrow left" onclick="moveLeft()">&#10094;</div>
-      <div class="carousel" id="carousel">
-        <div class="tile">No Poverty</div>
-        <div class="tile">Zero Hunger</div>
-        <div class="tile">Good Health and Well-being</div>
-        <div class="tile">Quality Education</div>
-        <div class="tile">Gender Equality</div>
-        <div class="tile">Clean Water and Sanitation</div>
-        <div class="tile">Affordable and Clean Energy</div>
-        <div class="tile">Decent Work and Economic Growth</div>
-        <div class="tile">Industry, Innovation and Infrastructure</div>
-        <div class="tile">Reduced Inequality</div>
-        <div class="tile">Sustainable Cities and Communities</div>
-        <div class="tile">Responsible Consumption and Production</div>
-        <div class="tile">Climate Action</div>
-        <div class="tile">Life Below Water</div>
-        <div class="tile">Life on Land</div>
-        <div class="tile">Peace and Justice Strong Institutions</div>
-        <div class="tile">Partnerships to achieve the Goal</div>
+      <div class="carousel-wrapper">
+        <div class="carousel" id="carousel">
+          <div class="tile">No Poverty</div>
+          <div class="tile">Zero Hunger</div>
+          <div class="tile">Good Health and Well-being</div>
+          <div class="tile">Quality Education</div>
+          <div class="tile">Gender Equality</div>
+          <div class="tile">Clean Water and Sanitation</div>
+          <div class="tile">Affordable and Clean Energy</div>
+          <div class="tile">Decent Work and Economic Growth</div>
+          <div class="tile">Industry, Innovation and Infrastructure</div>
+          <div class="tile">Reduced Inequality</div>
+          <div class="tile">Sustainable Cities and Communities</div>
+          <div class="tile">Responsible Consumption and Production</div>
+          <div class="tile">Climate Action</div>
+          <div class="tile">Life Below Water</div>
+          <div class="tile">Life on Land</div>
+          <div class="tile">Peace and Justice Strong Institutions</div>
+          <div class="tile">Partnerships to achieve the Goal</div>
+        </div>
       </div>
       <div class="arrow right" onclick="moveRight()">&#10095;</div>
     </div>
     <div class="dots" id="dots"></div>
   </section>
-
+  
   <script>
+    const carousel = document.getElementById("carousel");
+    const dotsContainer = document.getElementById("dots");
     let currentIndex = 0;
     const tiles = document.querySelectorAll(".tile");
-    const dotsContainer = document.getElementById("dots");
-    const carousel = document.getElementById("carousel");
-
+    const visibleTiles = 3;
+  
     function updateDots() {
       dotsContainer.innerHTML = "";
-      for (let i = 0; i < tiles.length; i++) {
+      for (let i = 0; i < tiles.length - visibleTiles + 1; i++) {
         let dot = document.createElement("div");
         dot.classList.add("dot");
         if (i === currentIndex) {
@@ -239,38 +242,45 @@
         dotsContainer.appendChild(dot);
       }
     }
-
+  
     function updateTiles() {
-      const offset = -(currentIndex * (tiles[currentIndex].offsetWidth + 20));
-      carousel.style.transform = `translateX(${offset}px)`;
+      tiles.forEach((tile, index) => {
+        tile.classList.remove("active", "faded");
+        if (index === currentIndex + 1) {
+          tile.classList.add("active");
+        } else if (index === currentIndex || index === currentIndex + 2) {
+          tile.classList.add("faded");
+        }
+      });
+      carousel.style.transform = `translateX(-${currentIndex * (tiles[0].offsetWidth + 10)}px)`;
       updateDots();
     }
-
+  
     function moveLeft() {
       if (currentIndex > 0) {
         currentIndex--;
         updateTiles();
       }
     }
-
+  
     function moveRight() {
-      if (currentIndex < tiles.length - 1) {
+      if (currentIndex < tiles.length - visibleTiles) {
         currentIndex++;
         updateTiles();
       }
     }
-
-    function autoSlide() {
-      moveRight();
-      if (currentIndex >= tiles.length - 1) {
+  
+    setInterval(() => {
+      if (currentIndex >= tiles.length - visibleTiles) {
         currentIndex = 0;
-        updateTiles();
+      } else {
+        currentIndex++;
       }
-    }
-
-    setInterval(autoSlide, 5000);
-
+      updateTiles();
+    }, 5000);
+  
     updateDots();
+    updateTiles();
   </script>
 
   <script src="script.js"></script>
