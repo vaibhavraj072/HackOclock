@@ -13,6 +13,48 @@
     * {
       font-family: 'Press Start 2P', cursive;
     }
+    .carousel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.3s ease;
+    }
+    .tile {
+      min-width: 300px;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+    .arrow {
+      cursor: pointer;
+      font-size: 2rem;
+      margin: 0 10px;
+    }
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 0 5px;
+      background: #ccc;
+    }
+    .dot.active {
+      background: #333;
+    }
   </style>
 </head>
 <body>
@@ -20,56 +62,54 @@
   <div class="grid-container"></div>
 
   <!-- Nav Bar -->
-   <nav>
+  <nav>
     <div class="logos">
       <img src="assets/GDGlogo.png" alt="GDG" class="gdg-logo">
       <img src="assets/iilmlogo.png" alt="IILM" class="iilm-logo">
     </div>
-        <div class="menu-icon">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-        </div>
-      </div>
-   </nav>
+    <div class="menu-icon">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </nav>
 
-   <!-- Hero Section -->
-   <section class="hero">
-      <h2 class="presenting">PRESENTING</h2>
-      <h1 class="title">
-        <span class="hack">HACK</span> 
-        <span class="oclock">O'CLOCK</span>
-      </h1>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2 class="presenting">PRESENTING</h2>
+    <h1 class="title">
+      <span class="hack">HACK</span> 
+      <span class="oclock">O'CLOCK</span>
+    </h1>
+    <div class="button-container">
+      <button class="btn btn-left">Register Now</button>
+      <button class="btn btn-right">Join Discord</button>
+    </div>  
+  </section>
 
-      <div class="button-container">
-        <button class="btn btn-left">Register Now</button>
-        <button class="btn btn-right">Join Discord</button>
-      </div>  
-   </section>
-
-   <section class="section-2">
+  <section class="section-2">
     <h2>IN SPONSORS WITH</h2>
     <hr>
     <div class="carousel">
       <img src="assets/sponsores/image.png" alt="IILM" class="iilm-logo">
       <img src="assets/sponsores/image.png" alt="IILM" class="iilm-logo">
       <img src="assets/sponsores/image.png" alt="IILM" class="iilm-logo">
-      
     </div>
     <hr>
-    </section>
-
-    <section class="section-3">
-      <h1>ABOUT US</h1>
-      <div class="about-content">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque inventore esse odio officiis at laboriosam, explicabo adipisci impedit dolorum tenetur ea cumque aliquam atque, maiores voluptates. Eum eos voluptatum est!
-            Voluptate facere beatae, vero eaque aperiam voluptatibus officia vitae modi totam. Reiciendis maiores nostrum id temporibus quibusdam voluptdvjhsgdjhsgdj hgdchav asdc casdc gshdcsd cgcdsa d cvdcvdghscd 
-          <div class="dino"></div>
-      </div>
   </section>
 
-   <section class="section-4">
+  <section class="section-3">
+    <h1>ABOUT US</h1>
+    <div class="about-content">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque inventore esse odio officiis at laboriosam, explicabo adipisci impedit dolorum tenetur ea cumque aliquam atque, maiores voluptates. Eum eos voluptatum est!
+        Voluptate facere beatae, vero eaque aperiam voluptatibus officia vitae modi totam. Reiciendis maiores nostrum id temporibus quibusdam voluptdvjhsgdjhsgdj hgdchav asdc casdc gshdcsd cgcdsa d cvdcvdghscd 
+      </p>
+      <div class="dino"></div>
+    </div>
+  </section>
+
+  <section class="section-4">
     <h1>GLIMPSES</h1>
     <div class="container">
       <div class="row">
@@ -87,140 +127,151 @@
         <div class="s-card"></div>
       </div>
     </div>
-   </section>
+  </section>
 
-   <section class="section-judges">
+  <section class="section-judges">
     <h1>JUDGES</h1>
     <div class="judges-container">
-        <div class="judge-card">
-            <h2>Vaibhav Raj</h2>
-            <div class="judge-image"></div>
-            <p class="judge-role">Senior Developer at Google</p>
-            <div class="social-icons">
-                <img src="./assets/linkedin.png" alt="LinkedIn">
-                <img src="./assets/mail.png" alt="Email">
-                <img src="./assets/insta.png" alt="Instagram">
-            </div>
+      <div class="judge-card">
+        <h2>Vaibhav Raj</h2>
+        <div class="judge-image"></div>
+        <p class="judge-role">Senior Developer at Google</p>
+        <div class="social-icons">
+          <img src="./assets/linkedin.png" alt="LinkedIn">
+          <img src="./assets/mail.png" alt="Email">
+          <img src="./assets/insta.png" alt="Instagram">
         </div>
-        <div class="judge-card">
-            <h2>Vaihav Raj</h2>
-            <div class="judge-image"></div>
-            <p class="judge-role">Senior Developer at Google</p>
-            <div class="social-icons">
-                <img src="./assets/linkedin.png" alt="LinkedIn">
-                <img src="./assets/mail.png" alt="Email">
-                <img src="./assets/insta.png" alt="Instagram">
-            </div>
+      </div>
+      <div class="judge-card">
+        <h2>Vaihav Raj</h2>
+        <div class="judge-image"></div>
+        <p class="judge-role">Senior Developer at Google</p>
+        <div class="social-icons">
+          <img src="./assets/linkedin.png" alt="LinkedIn">
+          <img src="./assets/mail.png" alt="Email">
+          <img src="./assets/insta.png" alt="Instagram">
         </div>
+      </div>
     </div>
-   </section>
+  </section>
 
-   <section class="section-5">
+  <section class="section-5">
     <h1>VENUE</h1>
     <div class="venue-card">
-        <div class="venue-text">
-            <h2>Institute of<br>Engineering &<br>Technology</h2>
-            <h3>IILM University</h3>
-            <p>Greater Noida,<br>KP 1, UP, 201306</p>
-            <button class="directions" onclick="window.location.href='https://www.google.com/maps/dir/28.4609435,77.4893496/Plot+No.18,+Iilm+College+Of+Engineering+%26+Technology,+16,+Knowledge+Park+II,+Greater+Noida,+Uttar+Pradesh+201306/@28.4615198,77.4890829,18z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x390cc1e13dcbf0eb:0xfcf1c4d9749a78b4!2m2!1d77.4913143!2d28.4603517?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D';">
-              Directions
-            </button>
-            
-        </div>
+      <div class="venue-text">
+        <h2>Institute of<br>Engineering &<br>Technology</h2>
+        <h3>IILM University</h3>
+        <p>Greater Noida,<br>KP 1, UP, 201306</p>
+        <button class="directions" onclick="window.location.href='https://www.google.com/maps/dir/28.4609435,77.4893496/Plot+No.18,+Iilm+College+Of+Engineering+%26+Technology,+16,+Knowledge+Park+II,+Greater+Noida,+Uttar+Pradesh+201306/@28.4615198,77.4890829,18z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x390cc1e13dcbf0eb:0xfcf1c4d9749a78b4!2m2!1d77.4913143!2d28.4603517?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D';">
+          Directions
+        </button>
+      </div>
       <div class="venue-image">
-          <img src="./assets/iilmbuilding.png" alt="IILM University">
+        <img src="./assets/iilmbuilding.png" alt="IILM University">
       </div>
     </div>
-   </section>
+  </section>
 
-
-   <section class="TIMELINE">
+  <section class="TIMELINE">
     <h1>TIMELINE</h1>
     <div class="time-card">
-        <img src="./assets/timeline.png" alt="Timeline">
-        <div class="schedule">
-            <div class="days">
-                <p>DAY 1</p>
-                <hr>
-                <p>DAY 2</p>
-            </div>
-            <div class="events">
-                <ul>
-                  <li>Registration 9:00</li>
-                  <li>Opening Ceremony 9:45</li>
-                  <li>Idea Sacking 10:57</li>
-                  <li>Registration 9:00</li>
-                </ul>
-            </div>
+      <img src="./assets/timeline.png" alt="Timeline">
+      <div class="schedule">
+        <div class="days">
+          <p>DAY 1</p>
+          <hr>
+          <p>DAY 2</p>
         </div>
+        <div class="events">
+          <ul>
+            <li>Registration 9:00</li>
+            <li>Opening Ceremony 9:45</li>
+            <li>Idea Sacking 10:57</li>
+            <li>Registration 9:00</li>
+          </ul>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="problem-statement">
-  <h1>Problem Statement</h1>
-  <div class="carousel-container">
+  <section class="problem-statement" style="max-width: 1200px; margin: 0 auto;">
+    <h1>Problem Statement</h1>
+    <div class="carousel-container">
       <div class="arrow left" onclick="moveLeft()">&#10094;</div>
       <div class="carousel" id="carousel">
-          <script>
-              for (let i = 1; i <= 17; i++) {
-                  document.write(`<div class='tile ${i === 3 ? "active" : "hidden"}'>Problem Statement ${i}</div>`);
-              }
-          </script>
+        <div class="tile">No Poverty</div>
+        <div class="tile">Zero Hunger</div>
+        <div class="tile">Good Health and Well-being</div>
+        <div class="tile">Quality Education</div>
+        <div class="tile">Gender Equality</div>
+        <div class="tile">Clean Water and Sanitation</div>
+        <div class="tile">Affordable and Clean Energy</div>
+        <div class="tile">Decent Work and Economic Growth</div>
+        <div class="tile">Industry, Innovation and Infrastructure</div>
+        <div class="tile">Reduced Inequality</div>
+        <div class="tile">Sustainable Cities and Communities</div>
+        <div class="tile">Responsible Consumption and Production</div>
+        <div class="tile">Climate Action</div>
+        <div class="tile">Life Below Water</div>
+        <div class="tile">Life on Land</div>
+        <div class="tile">Peace and Justice Strong Institutions</div>
+        <div class="tile">Partnerships to achieve the Goal</div>
       </div>
       <div class="arrow right" onclick="moveRight()">&#10095;</div>
-  </div>
-  <div class="dots" id="dots"></div>
-</section>
+    </div>
+    <div class="dots" id="dots"></div>
+  </section>
 
-<script>
-  let currentIndex = 2;
-  const tiles = document.querySelectorAll(".tile");
-  const dotsContainer = document.getElementById("dots");
+  <script>
+    let currentIndex = 0;
+    const tiles = document.querySelectorAll(".tile");
+    const dotsContainer = document.getElementById("dots");
+    const carousel = document.getElementById("carousel");
 
-  function updateDots() {
+    function updateDots() {
       dotsContainer.innerHTML = "";
       for (let i = 0; i < tiles.length; i++) {
-          let dot = document.createElement("div");
-          dot.classList.add("dot");
-          if (i === currentIndex) {
-              dot.classList.add("active");
-          }
-          dotsContainer.appendChild(dot);
+        let dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (i === currentIndex) {
+          dot.classList.add("active");
+        }
+        dotsContainer.appendChild(dot);
       }
-  }
+    }
 
-  function updateTiles() {
-      tiles.forEach((tile, index) => {
-          tile.classList.add("hidden");
-          tile.classList.remove("active");
-          tile.style.opacity = "0.5";
-          tile.style.transform = "scale(0.8)";
-      });
-      tiles[currentIndex - 1]?.classList.remove("hidden");
-      tiles[currentIndex].classList.remove("hidden");
-      tiles[currentIndex].classList.add("active");
-      tiles[currentIndex].style.opacity = "1";
-      tiles[currentIndex].style.transform = "scale(1)";
-      tiles[currentIndex + 1]?.classList.remove("hidden");
+    function updateTiles() {
+      const offset = -(currentIndex * (tiles[currentIndex].offsetWidth + 20));
+      carousel.style.transform = `translateX(${offset}px)`;
       updateDots();
-  }
+    }
 
-  function moveLeft() {
-      if (currentIndex > 1) {
-          currentIndex--;
-          updateTiles();
+    function moveLeft() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateTiles();
       }
-  }
+    }
 
-  function moveRight() {
-      if (currentIndex < tiles.length - 2) {
-          currentIndex++;
-          updateTiles();
+    function moveRight() {
+      if (currentIndex < tiles.length - 1) {
+        currentIndex++;
+        updateTiles();
       }
-  }
-  updateDots();
-</script>
+    }
 
+    function autoSlide() {
+      moveRight();
+      if (currentIndex >= tiles.length - 1) {
+        currentIndex = 0;
+        updateTiles();
+      }
+    }
+
+    setInterval(autoSlide, 5000);
+
+    updateDots();
+  </script>
 
   <script src="script.js"></script>
 </body>
