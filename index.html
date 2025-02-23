@@ -223,66 +223,63 @@
     </div>
     <div class="dots" id="dots"></div>
   </section>
-  
-  <script>
-    const carousel = document.getElementById("carousel");
-    const dotsContainer = document.getElementById("dots");
-    let currentIndex = 0;
-    const tiles = document.querySelectorAll(".tile");
-    const visibleTiles = 3;
-  
-    function updateDots() {
-      dotsContainer.innerHTML = "";
-      for (let i = 0; i < tiles.length - visibleTiles + 1; i++) {
-        let dot = document.createElement("div");
-        dot.classList.add("dot");
-        if (i === currentIndex) {
-          dot.classList.add("active");
-        }
-        dotsContainer.appendChild(dot);
-      }
-    }
-  
-    function updateTiles() {
-      tiles.forEach((tile, index) => {
-        tile.classList.remove("active", "faded");
-        if (index === currentIndex + 1) {
-          tile.classList.add("active");
-        } else if (index === currentIndex || index === currentIndex + 2) {
-          tile.classList.add("faded");
-        }
-      });
-      carousel.style.transform = `translateX(-${currentIndex * (tiles[0].offsetWidth + 10)}px)`;
-      updateDots();
-    }
-  
-    function moveLeft() {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateTiles();
-      }
-    }
-  
-    function moveRight() {
-      if (currentIndex < tiles.length - visibleTiles) {
-        currentIndex++;
-        updateTiles();
-      }
-    }
-  
-    setInterval(() => {
-      if (currentIndex >= tiles.length - visibleTiles) {
-        currentIndex = 0;
-      } else {
-        currentIndex++;
-      }
-      updateTiles();
-    }, 5000);
-  
-    updateDots();
-    updateTiles();
-  </script>
 
+  <footer class="footer">
+    <div class="footer-content">
+        <!-- Logos and Social Section -->
+        <div class="logo-section">
+            <div class="main-logos">
+                <img src="./assets/GDGlogo.png" alt="Google Developer Group" class="logo">
+                <img src="./assets/iilmlogo.png" alt="IILM University" class="logo">
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon gmail"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Description -->
+            <div class="description">
+                <span class="hack-text">HackOclock</span>, a groundbreaking hackathon by 
+                <span class="gdg-text">Google Developers Group</span> and 
+                <span class="iilm-text">IILM University</span>, 
+                <span class="location-text">Greater Noida U.P.</span>, 
+                redefines creativity and technology. Join us in the pursuit of innovation, 
+                transcending traditional hackathons.
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="nav-links">
+                <div class="links-column">
+                    <h3>Useful Links</h3>
+                    <a href="#">Link tree</a>
+                    <a href="#">Devfolio</a>
+                </div>
+                <div class="links-column">
+                    <a href="#">Register</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Our Sponsors</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Problem Themes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credits -->
+    <div class="credits">
+        Designed &amp; Developed by love of: Vaibhav Raj (Google Developers Group IILM University)
+    </div>
+</footer>
+
+  
+  
+
+  
+  
   <script src="script.js"></script>
 </body>
 </html>

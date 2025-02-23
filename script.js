@@ -32,3 +32,63 @@ const gridContainer = document.querySelector('.grid-container');
 
     createGrid();
     window.addEventListener('resize', createGrid);
+    
+
+
+
+    const carousel = document.getElementById("carousel");
+    const dotsContainer = document.getElementById("dots");
+    let currentIndex = 0;
+    const tiles = document.querySelectorAll(".tile");
+    const visibleTiles = 3;
+  
+    function updateDots() {
+      dotsContainer.innerHTML = "";
+      for (let i = 0; i < tiles.length - visibleTiles + 1; i++) {
+        let dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (i === currentIndex) {
+          dot.classList.add("active");
+        }
+        dotsContainer.appendChild(dot);
+      }
+    }
+  
+    function updateTiles() {
+      tiles.forEach((tile, index) => {
+        tile.classList.remove("active", "faded");
+        if (index === currentIndex + 1) {
+          tile.classList.add("active");
+        } else if (index === currentIndex || index === currentIndex + 2) {
+          tile.classList.add("faded");
+        }
+      });
+      carousel.style.transform = `translateX(-${currentIndex * (tiles[0].offsetWidth + 10)}px)`;
+      updateDots();
+    }
+  
+    function moveLeft() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateTiles();
+      }
+    }
+  
+    function moveRight() {
+      if (currentIndex < tiles.length - visibleTiles) {
+        currentIndex++;
+        updateTiles();
+      }
+    }
+  
+    setInterval(() => {
+      if (currentIndex >= tiles.length - visibleTiles) {
+        currentIndex = 0;
+      } else {
+        currentIndex++;
+      }
+      updateTiles();
+    }, 5000);
+  
+    updateDots();
+    updateTiles();
