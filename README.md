@@ -22,15 +22,14 @@ As a **core member of GDG IILM University**, I have taken full responsibility fo
 
 ## 📸 Screenshots
 ### Home Page
-![Home Page Screenshot](https://via.placeholder.com/800x400?text=Home+Page)
+![Home Page Screenshot](https://drive.google.com/file/d/1PfYtdgquawdySNvvgziBgtUcFKJ9d314/view?usp=drive_link)
 
-### Registration Page
-![Registration Page Screenshot](https://via.placeholder.com/800x400?text=Registration+Page)
+
 
 ## 🚀 How to Run Locally
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/hackoclock.git
+   git clone https://github.com/vaibhavraj072/hackoclock.git
    ```
 2. **Navigate to the project folder:**
    ```bash
